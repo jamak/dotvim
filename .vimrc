@@ -1,3 +1,4 @@
+call pathogen#infect()
 " This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises 
 set number
 set autoindent 
@@ -33,7 +34,6 @@ map <C-k> <C-w>k
 "auto-saves buffers on switch
 set autowrite
 "This is for pathogen
-call pathogen#infect()
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
 
