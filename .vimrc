@@ -1,4 +1,8 @@
 call pathogen#infect()
+"call pathogen#runtime_append_all_bundles()
+filetype off
+syntax on
+filetype plugin indent on
 " This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises 
 set number
 set autoindent 
@@ -20,8 +24,6 @@ if has("gui_running")
   set guifont=UbuntuBeta\ Mono:h10
   set fullscreen
 endif
-syntax on
-filetype plugin indent on
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 " pinky-saving
