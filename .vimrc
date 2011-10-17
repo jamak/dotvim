@@ -1,5 +1,6 @@
 call pathogen#infect()
 "call pathogen#runtime_append_all_bundles()
+let mapleader = ","
 filetype off
 syntax on
 filetype plugin indent on
@@ -35,7 +36,11 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 "auto-saves buffers on switch
 set autowrite
-"This is for pathogen
+"This is for taglist
+map <F8> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let Tlist_WinWidth = 50
+map <F4> :TlistToggle<cr>
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
 
