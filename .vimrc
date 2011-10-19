@@ -37,6 +37,7 @@ elseif has("gui_gtk")
   let Tlist_Ctags_Cmd = "/usr/bin/ctags"
   set tags+=/usr/lib/python2.7/tags
   set tags+=/usr/local/lib/python2.7/site-packages/tags
+  set tags+=/usr/local/lib/python2.7/dist-packages/tags
 endif
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
