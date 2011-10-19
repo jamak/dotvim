@@ -33,7 +33,7 @@ if has("gui_macvim")
   let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 elseif has("gui_gtk")
   set guifont=UbuntuMono\ 10.5
-  map <F8> :!/usr/bin/ctags -R .<CR>
+  map <F8> :!ctags -R<CR>
   let Tlist_Ctags_Cmd = "/usr/bin/ctags"
   set tags+=/usr/lib/python2.7/tags
   set tags+=/usr/local/lib/python2.7/site-packages/tags
