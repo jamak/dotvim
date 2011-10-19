@@ -22,8 +22,21 @@ if has("gui_running")
   set guioptions-=m 
   set guioptions-=r
   set guioptions-=T
+endif
+if has("gui_macvim")
   set guifont=UbuntuBeta\ Mono:h10
   set fullscreen
+  "set some tags shit
+  set tags+=/System/Library/Frameworks/Python.framework/Versions/Current/tags
+  set tags+=/Library/Python/2.6/site-packages/tags
+  map <F8> :!/usr/local/bin/ctags -R .<CR>
+  let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+elseif has("gui_gtk")
+  set guifont=UbuntuMono\ 10.5
+  map <F8> :!/usr/bin/ctags -R .<CR>
+  let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+  set tags+=/usr/lib/python2.7/tags
+  set tags+=/usr/local/lib/python2.7/site-packages/tags
 endif
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
@@ -37,8 +50,6 @@ map <C-k> <C-w>k
 "auto-saves buffers on switch
 set autowrite
 "This is for taglist
-map <F8> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
 "Use TAB to complete when typing words, else inserts TABs as usual.
@@ -59,5 +70,3 @@ endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 set dictionary="/usr/dict/words"
 
-"set some tags shit
-set tags+=/System/Library/Frameworks/Python.framework/Versions/Current/tags
