@@ -1,10 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Library/Python/2.6/site-packages'
-let g:netrw_dirhist_2='/Library/Python/2.6/site-packages/vboxapi'
-let g:netrw_dirhist_3='/Users/jkeene/github/overtone'
-let g:netrw_dirhist_4='/Users/jkeene/github/overtone/docs'
-let g:netrw_dirhist_5='/Users/jkeene/github/overtone/docs/practice'
-let g:netrw_dirhist_6='/Users/jkeene/github/overtone/docs'
-let g:netrw_dirhist_7='/Users/jkeene/github/overtone'
-let g:netrw_dirhist_8='/Users/jkeene/github/overtone/examples'
+let g:netrw_dirhist_cnt =0

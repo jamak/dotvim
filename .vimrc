@@ -4,7 +4,8 @@ let mapleader = ","
 filetype off
 syntax on
 filetype plugin indent on
-" This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises 
+" This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises
+" because seriously, fuck tabs
 set number
 set autoindent 
 set smartindent 
@@ -32,13 +33,14 @@ if has("gui_macvim")
   map <F8> :!/usr/local/bin/ctags -R .<CR>
   let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 elseif has("gui_gtk")
-  set guifont=UbuntuMono\ 10.5
+  set guifont=UbuntuMono\ 10
   map <F8> :!ctags -R<CR>
   let Tlist_Ctags_Cmd = "/usr/bin/ctags"
   set tags+=/usr/lib/python2.7/tags
   set tags+=/usr/local/lib/python2.7/site-packages/tags
   set tags+=/usr/local/lib/python2.7/dist-packages/tags
 endif
+"sensible movements are important, kids.
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 " pinky-saving
@@ -57,10 +59,9 @@ map <F4> :TlistToggle<cr>
 "Uses dictionary and source files to find matching words to complete.
 
 "See help completion for source,
-"Note: usual completion is on <C-n> but more trouble to press all the time.
-"Never type the same word twice and maybe learn a new spellings!
+"Note: usual completion is on <C-n> but it's a pain in the ass to press all the time.
+"Never type the same word twice again!
 "Use the Linux dictionary when spelling is in doubt.
-"Window users can copy the file to their machine.
 function! Tab_Or_Complete()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
     return "\<C-N>"
@@ -70,4 +71,3 @@ function! Tab_Or_Complete()
 endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 set dictionary="/usr/dict/words"
-
