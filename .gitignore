@@ -33,5 +33,7 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
-# vim swap files #
+# vim swap files and miscellanea #
+##################################
 *.swp
+.netrwhist
