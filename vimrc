@@ -1,4 +1,5 @@
 call pathogen#infect()
+so ~/.vim/bundle/posterous/posterous.vim
 "call pathogen#runtime_append_all_bundles()
 let mapleader = ","
 filetype off
@@ -29,6 +30,7 @@ if has("gui_macvim")
   set fullscreen
   "set some tags shit
   set tags+=/System/Library/Frameworks/Python.framework/Versions/Current/tags
+  set clipboard=unnamed
   set tags+=/Library/Python/2.6/site-packages/tags
   map <F8> :!/usr/local/bin/ctags -R .<CR>
   let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
@@ -72,6 +74,9 @@ endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 set dictionary="/usr/dict/words"
 "Automatically make closing brackets parens, braces etc
-inoremap ( ()<Esc>i
-inoremap { {}<Esc>i
-inoremap [ []<Esc>i
+inoremap ( ()<Esc>:let leavechar=")"<CR>i
+inoremap { {}<Esc>:let leavechar="}"<CR>i
+inoremap [ []<Esc>:let leavechar="]"<CR>i
+inoremap " ""<Esc>:let leavechar="\""<CR>i
+"Leave an enclosed block
+imap <Leader>l <Esc>:exec "normal f" . leavechar<CR>a
