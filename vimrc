@@ -27,7 +27,6 @@ if has("gui_running")
 endif
 if has("gui_macvim")
   set guifont=UbuntuBeta\ Mono:h10
-  set fullscreen
   "set some tags shit
   set tags+=/System/Library/Frameworks/Python.framework/Versions/Current/tags
   set clipboard=unnamed
@@ -64,14 +63,16 @@ map <F4> :TlistToggle<cr>
 "Note: usual completion is on <C-n> but it's a pain in the ass to press all the time.
 "Never type the same word twice again!
 "Use the Linux dictionary when spelling is in doubt.
-function! Tab_Or_Complete()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return "\<C-N>"
-  else
-    return "\<Tab>"
-  endif
-endfunction
-inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+
+""function! Tab_Or_Complete()
+""  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+""    return "\<C-N>"
+""  else
+""    return "\<Tab>"
+""  endif
+""endfunction
+
+inoremap <C-`> <C-N> 
 set dictionary="/usr/dict/words"
 "Automatically make closing brackets parens, braces etc
 inoremap ( ()<Esc>:let leavechar=")"<CR>i
