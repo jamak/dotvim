@@ -56,7 +56,41 @@ set autowrite
 "This is for taglist
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
-"Use TAB to complete when typing words, else inserts TABs as usual.
+"" Status line ------------------------------------------------------------- {{{
+
+augroup ft_statuslinecolor
+    au!
+
+    au InsertEnter * hi StatusLine ctermfg=196 guifg=#FF3145
+    au InsertLeave * hi StatusLine ctermfg=130 guifg=#CD5907
+augroup END
+
+set statusline=%f    " Path.
+set statusline+=%m   " Modified flag.
+set statusline+=%r   " Readonly flag.
+set statusline+=%w   " Preview window flag.
+
+set statusline+=\    " Space.
+
+set statusline+=%#redbar#                " Highlight the following as a warning.
+set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
+set statusline+=%*                           " Reset highlighting.
+
+set statusline+=%=   " Right align.
+
+" File format, encoding and type.  Ex: "(unix/utf-8/python)"
+set statusline+=(
+set statusline+=%{&ff}                        " Format (unix/DOS).
+set statusline+=/
+set statusline+=%{strlen(&fenc)?&fenc:&enc}   " Encoding (utf-8).
+set statusline+=/
+set statusline+=%{&ft}                        " Type (python).
+set statusline+=)
+
+" Line and column position and counts.
+set statusline+=\ (line\ %l\/%L,\ col\ %03c)
+
+" }}}Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
 
 "See help completion for source,
@@ -75,9 +109,9 @@ map <F4> :TlistToggle<cr>
 inoremap <C-`> <C-N> 
 set dictionary="/usr/dict/words"
 "Automatically make closing brackets parens, braces etc
-inoremap ( ()<Esc>:let leavechar=")"<CR>i
-inoremap { {}<Esc>:let leavechar="}"<CR>i
-inoremap [ []<Esc>:let leavechar="]"<CR>i
-inoremap " ""<Esc>:let leavechar="\""<CR>i
+""inoremap ( ()<Esc>:let leavechar=")"<CR>i
+""inoremap { {}<Esc>:let leavechar="}"<CR>i
+""inoremap [ []<Esc>:let leavechar="]"<CR>i
+""inoremap " ""<Esc>:let leavechar="\""<CR>i
 "Leave an enclosed block
-imap <Leader>l <Esc>:exec "normal f" . leavechar<CR>a
+""imap <Leader>l <Esc>:exec "normal f" . leavechar<CR>a
