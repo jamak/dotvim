@@ -1,5 +1,6 @@
-call pathogen#infect()
-so ~/.vim/bundle/posterous/posterous.vim
+so /Users/jkeene/.vim/unbundle/unbundle.vim
+"call pathogen#infect()
+"so ~/.vim/bundle/posterous/posterous.vim
 "call pathogen#runtime_append_all_bundles()
 let mapleader = ","
 filetype off
@@ -58,12 +59,12 @@ let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
 "" Status line ------------------------------------------------------------- {{{
 
-augroup ft_statuslinecolor
-    au!
-
-    au InsertEnter * hi StatusLine ctermfg=196 guifg=#FF3145
-    au InsertLeave * hi StatusLine ctermfg=130 guifg=#CD5907
-augroup END
+"augroup ft_statuslinecolor
+"    au!
+"
+"    au InsertEnter * hi StatusLine ctermfg=196 guifg=#FF3145
+"    au InsertLeave * hi StatusLine ctermfg=130 guifg=#CD5907
+"augroup END
 
 set statusline=%f    " Path.
 set statusline+=%m   " Modified flag.
@@ -73,7 +74,7 @@ set statusline+=%w   " Preview window flag.
 set statusline+=\    " Space.
 
 set statusline+=%#redbar#                " Highlight the following as a warning.
-set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
+"set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
 set statusline+=%*                           " Reset highlighting.
 
 set statusline+=%=   " Right align.
@@ -90,7 +91,8 @@ set statusline+=)
 " Line and column position and counts.
 set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 
-" }}}Use TAB to complete when typing words, else inserts TABs as usual.
+" }}}
+" Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
 
 "See help completion for source,
@@ -100,18 +102,18 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 
 ""function! Tab_Or_Complete()
 ""  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-""    return "\<C-N>"
+""    return "\<C-N>
 ""  else
-""    return "\<Tab>"
+""    return "\<Tab>
 ""  endif
 ""endfunction
 
 inoremap <C-`> <C-N> 
 set dictionary="/usr/dict/words"
 "Automatically make closing brackets parens, braces etc
-""inoremap ( ()<Esc>:let leavechar=")"<CR>i
-""inoremap { {}<Esc>:let leavechar="}"<CR>i
-""inoremap [ []<Esc>:let leavechar="]"<CR>i
-""inoremap " ""<Esc>:let leavechar="\""<CR>i
+inoremap ( ()<Esc>:let leavechar=")"<CR>i
+inoremap { {}<Esc>:let leavechar="}"<CR>i
+inoremap [ []<Esc>:let leavechar="]"<CR>i
+inoremap " ""<Esc>:let leavechar="\""<CR>i
 "Leave an enclosed block
-""imap <Leader>l <Esc>:exec "normal f" . leavechar<CR>a
+imap <Leader>l <Esc>:exec "normal f" . leavechar<CR>a

@@ -28,3 +28,9 @@
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
 	url = https://github.com/sjl/python-mode.git
+[submodule "unbundle"]
+	path = unbundle
+	url = https://github.com/sunaku/vim-unbundle.git
+[submodule "ftbundle/python/python-mode"]
+	path = ftbundle/python/python-mode
+	url = https://github.com/sjl/python-mode.git
