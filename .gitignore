@@ -37,3 +37,9 @@ Thumbs.db
 ##################################
 *.swp
 .netrwhist
+
+bundle/posterous
+
+ftbundle/python/python-mode
+
+bundle/snipmate
