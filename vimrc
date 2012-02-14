@@ -1,4 +1,4 @@
-so /Users/jkeene/.vim/unbundle/unbundle.vim
+so ~/.vim/unbundle/unbundle.vim
 "call pathogen#infect()
 "so ~/.vim/bundle/posterous/posterous.vim
 "call pathogen#runtime_append_all_bundles()
@@ -108,7 +108,7 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 ""  endif
 ""endfunction
 
-inoremap <C-`> <C-N> 
+inoremap <Leader>q <C-N> 
 set dictionary="/usr/dict/words"
 "Automatically make closing brackets parens, braces etc
 inoremap ( ()<Esc>:let leavechar=")"<CR>i
