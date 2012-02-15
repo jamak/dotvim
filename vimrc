@@ -1,8 +1,12 @@
-so ~/.vim/unbundle/unbundle.vim
+set nocompatible
+so /Users/jkeene/.vim/unbundle/unbundle.vim
 "call pathogen#infect()
 "so ~/.vim/bundle/posterous/posterous.vim
 "call pathogen#runtime_append_all_bundles()
 let mapleader = ","
+set cul "Highlight the current line
+set laststatus=2 "Show the statusline, even with one file open
+set tw=80
 filetype off
 syntax on
 filetype plugin indent on
@@ -15,16 +19,18 @@ set tabstop=2
 set shiftwidth=2 
 set expandtab 
 set softtabstop=2 
-" changes the colorscheme
+" changes the colorscheme, removes all the window chrome 
 if has("gui_running")
   set autochdir
-  colorscheme twilight
+  colorscheme sorcerer
   set guioptions-=L
   set guioptions-=l
   set guioptions-=R
   set guioptions-=m 
   set guioptions-=r
   set guioptions-=T
+else
+  colorscheme peachpuff
 endif
 if has("gui_macvim")
   set guifont=UbuntuBeta\ Mono:h10
@@ -57,6 +63,7 @@ set autowrite
 "This is for taglist
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
+
 "" Status line ------------------------------------------------------------- {{{
 
 "augroup ft_statuslinecolor
@@ -92,6 +99,7 @@ set statusline+=)
 set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 
 " }}}
+
 " Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
 
@@ -100,15 +108,16 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 "Never type the same word twice again!
 "Use the Linux dictionary when spelling is in doubt.
 
-""function! Tab_Or_Complete()
-""  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-""    return "\<C-N>
-""  else
-""    return "\<Tab>
-""  endif
-""endfunction
+function! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+  else
+    return "\<Tab>"
+  endif
+endfunction
 
-inoremap <Leader>q <C-N> 
+map <D-/> :Tab_or_Complete<cr> 
+
 set dictionary="/usr/dict/words"
 "Automatically make closing brackets parens, braces etc
 inoremap ( ()<Esc>:let leavechar=")"<CR>i
