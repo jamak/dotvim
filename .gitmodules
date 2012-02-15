@@ -22,9 +22,6 @@
 [submodule "unbundle"]
 	path = unbundle
 	url = https://github.com/sunaku/vim-unbundle.git
-[submodule "ftbundle/python/python-mode"]
-	path = ftbundle/python/python-mode
-	url = https://github.com/sjl/python-mode.git
 [submodule "bundle/solarized"]
 	path = bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
