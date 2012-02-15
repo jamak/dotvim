@@ -1,5 +1,5 @@
 set nocompatible
-so /Users/jkeene/.vim/unbundle/unbundle.vim
+so ~/.vim/unbundle/unbundle.vim
 "call pathogen#infect()
 "so ~/.vim/bundle/posterous/posterous.vim
 "call pathogen#runtime_append_all_bundles()

@@ -37,9 +37,3 @@ Thumbs.db
 ##################################
 *.swp
 .netrwhist
-
-bundle/posterous/posterous2.vim
-
-ftbundle/python/python-mode
-
-bundle/snipmate/posterous2.vim
