@@ -48,12 +48,14 @@ elseif has("gui_gtk")
   set tags+=/usr/local/lib/python2.7/site-packages/tags
   set tags+=/usr/local/lib/python2.7/dist-packages/tags
 endif
+set visualbell t_vb=    " turn off error beep/flash
+set novisualbell        " turn off visual bell
 "===============================================================
 "Shortcuts!
 "===============================================================
 " ,v brings up my .vimrc
 " ,V reloads it -- making all changes active (save required)
-map <leader>v :sp ~/.vim/vimrc<CR><C-W>_
+map <leader>v :vs ~/.vim/vimrc<CR><C-W>_
 map <silent> <leader>V :source ~/.vim/vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 "
 map <leader>r :registers<CR>
@@ -80,6 +82,8 @@ set autowrite
 "This is for taglist
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
+"Aaaaaand this is for NERDTree
+map <leader>a :NERDTree<CR>
 
 "" Status line ------------------------------------------------------------- {{{
 
