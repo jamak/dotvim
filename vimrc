@@ -48,6 +48,15 @@ elseif has("gui_gtk")
   set tags+=/usr/local/lib/python2.7/site-packages/tags
   set tags+=/usr/local/lib/python2.7/dist-packages/tags
 endif
+"===============================================================
+"Shortcuts!
+"===============================================================
+" ,v brings up my .vimrc
+" ,V reloads it -- making all changes active (save required)
+map <leader>v :sp ~/.vim/vimrc<CR><C-W>_
+map <silent> <leader>V :source ~/.vim/vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+"
+map <leader>r :registers<CR>
 "sensible movements are important, kids.
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
@@ -58,6 +67,14 @@ map <C-h> <C-w>h
 map <C-l> <C-w>l
 map <C-j> <C-w>j
 map <C-k> <C-w>k
+"make these work in insert mode too
+imap <C-W> <C-O><C-W>
+"use + and - to resize vertical splits
+map - <C-W>>
+map + <C-W><
+"and for hsplits use alt-< or alt->
+map <M-,> <C-W>-
+map <M-.> <C-W>+
 "auto-saves buffers on switch
 set autowrite
 "This is for taglist
