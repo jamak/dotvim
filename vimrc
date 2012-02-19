@@ -83,7 +83,7 @@ set autowrite
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
 "Aaaaaand this is for NERDTree
-map <leader>a :NERDTree<CR>
+map <leader>a :NERDTreeToggle<CR>
 
 "" Status line ------------------------------------------------------------- {{{
 
