@@ -76,6 +76,8 @@ imap <C-W> <C-O><C-W>
 "use + and - to resize vertical splits
 map - <C-W>>
 map + <C-W><
+map - <C-W><
+map + <C-W>>
 "and for hsplits use alt-< or alt->
 map <M-,> <C-W>-
 map <M-.> <C-W>+
