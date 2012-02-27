@@ -13,20 +13,20 @@ filetype plugin indent on
 " This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises
 " because seriously, fuck tabs
 set number
-set autoindent 
-set smartindent 
-set tabstop=2 
-set shiftwidth=2 
-set expandtab 
-set softtabstop=2 
-" changes the colorscheme, removes all the window chrome 
+set autoindent
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set softtabstop=2
+" changes the colorscheme, removes all the window chrome
 if has("gui_running")
   set autochdir
   colorscheme sorcerer
   set guioptions-=L
   set guioptions-=l
   set guioptions-=R
-  set guioptions-=m 
+  set guioptions-=m
   set guioptions-=r
   set guioptions-=T
 else
