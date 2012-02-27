@@ -74,8 +74,6 @@ map <C-k> <C-w>k
 "make these work in insert mode too
 imap <C-W> <C-O><C-W>
 "use + and - to resize vertical splits
-map - <C-W>>
-map + <C-W><
 map - <C-W><
 map + <C-W>>
 "and for hsplits use alt-< or alt->
@@ -88,7 +86,6 @@ let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
 "Aaaaaand this is for NERDTree
 map <leader>a :NERDTreeToggle<CR>
-
 "" Status line ------------------------------------------------------------- {{{
 
 "augroup ft_statuslinecolor
@@ -99,7 +96,6 @@ map <leader>a :NERDTreeToggle<CR>
 "augroup END
 
 set statusline=%f    " Path.
-set statusline+=%m   " Modified flag.
 set statusline+=%r   " Readonly flag.
 set statusline+=%w   " Preview window flag.
 
@@ -141,7 +137,7 @@ function! Tab_Or_Complete()
   endif
 endfunction
 
-map <D-/> :Tab_or_Complete<cr> 
+map <D-/> :Tab_or_Complete<cr>
 
 set dictionary="/usr/dict/words"
 "Automatically make closing brackets parens, braces etc
