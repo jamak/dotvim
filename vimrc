@@ -39,6 +39,8 @@ if has("gui_macvim")
   set clipboard=unnamed
   set tags+=/Library/Python/2.6/site-packages/tags
   map <F8> :!/usr/local/bin/ctags -R .<CR>
+  "this maps toggle fullscreen to leader f
+  map <leader>f :set invfullscreen<CR>
   let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 elseif has("gui_gtk")
   set guifont=UbuntuMono\ 10
