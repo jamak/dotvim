@@ -34,3 +34,6 @@
 [submodule "ftbundle/processing/vim-processing"]
 	path = ftbundle/processing/vim-processing
 	url = https://github.com/sophacles/vim-processing.git
+[submodule "ftbundle/python/python-mode"]
+	path = ftbundle/python/python-mode
+	url = https://github.com/klen/python-mode.git
