@@ -31,3 +31,6 @@
 [submodule "ftbundle/objc/vim-objc"]
 	path = ftbundle/objc/vim-objc
 	url = https://github.com/b4winckler/vim-objc.git
+[submodule "ftbundle/processing/vim-processing"]
+	path = ftbundle/processing/vim-processing
+	url = https://github.com/sophacles/vim-processing.git
