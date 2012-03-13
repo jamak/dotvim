@@ -72,7 +72,7 @@ map <C-l> <C-w>l
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 "make these work in insert mode too
-imap <C-W> <C-O><C-W>
+imap <C-w> <C-O><C-w>
 "use + and - to resize vertical splits
 map - <C-W><
 map + <C-W>>
