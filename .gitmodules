@@ -28,3 +28,6 @@
 [submodule "bundle/posterous"]
 	path = bundle/posterous
 	url = https://github.com/agscala/vim-posterous.git
+[submodule "ftbundle/objc/vim-objc"]
+	path = ftbundle/objc/vim-objc
+	url = https://github.com/b4winckler/vim-objc.git
