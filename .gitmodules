@@ -37,3 +37,6 @@
 [submodule "ftbundle/python/python-mode"]
 	path = ftbundle/python/python-mode
 	url = https://github.com/klen/python-mode.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
