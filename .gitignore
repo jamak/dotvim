@@ -38,7 +38,3 @@ Thumbs.db
 *.swp
 .netrwhist
 
-#the submodule that just won't die #
-####################################
-
-bundle/posterous

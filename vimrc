@@ -73,6 +73,11 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 "make these work in insert mode too
 imap <C-w> <C-O><C-w>
+"aaand map the direction keys to the splits
+map <Left> <C-h>
+map <Right> <C-l>
+map <Down> <C-j>
+map <Up> <C-k>
 "use + and - to resize vertical splits
 map - <C-W><
 map + <C-W>>
@@ -137,7 +142,7 @@ function! Tab_Or_Complete()
   endif
 endfunction
 
-map <D-/> :Tab_or_Complete<cr>
+map <Leader><CR> :Tab_or_Complete<cr>
 
 set dictionary="/usr/dict/words"
 "Automatically make closing brackets parens, braces etc
