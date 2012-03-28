@@ -33,7 +33,7 @@ else
   colorscheme peachpuff
 endif
 if has("gui_macvim")
-  set guifont=UbuntuBeta\ Mono:h10
+  set guifont=UbuntuBeta\ Mono:h11
   "set some tags shit
   set tags+=/System/Library/Frameworks/Python.framework/Versions/Current/tags
   set clipboard=unnamed
