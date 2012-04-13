@@ -9,6 +9,7 @@ set laststatus=2 "Show the statusline, even with one file open
 set tw=80
 filetype off
 syntax on
+let g:Powerline_symbols = 'fancy'
 filetype plugin indent on
 " This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises
 " because seriously, fuck tabs
