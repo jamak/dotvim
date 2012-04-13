@@ -30,7 +30,7 @@ if has("gui_running")
   set guioptions-=r
   set guioptions-=T
 else
-  colorscheme peachpuff
+  colorscheme jellybeans
 endif
 if has("gui_macvim")
   set guifont=UbuntuBeta\ Mono:h11
