@@ -20,6 +20,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set softtabstop=2
+set backspace=indent,eol,start
 " changes the colorscheme, removes all the window chrome
 if has("gui_running")
   set autochdir
