@@ -61,7 +61,7 @@ set novisualbell        " turn off visual bell
 "===============================================================
 " ,v brings up my .vimrc
 " ,V reloads it -- making all changes active (save required)
-map <leader>v :vs ~/.vim/vimrc<CR><C-W>_
+map <leader>v :leftabove vsplit ~/.vim/vimrc<CR><C-W>_
 map <silent> <leader>V :source ~/.vim/vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 "
 map <leader>r :registers<CR>
