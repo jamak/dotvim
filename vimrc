@@ -20,6 +20,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set softtabstop=2
+"split to the right, the way my brain thinks it should happen anyway
+set splitright
 set backspace=indent,eol,start
 " changes the colorscheme, removes all the window chrome
 if has("gui_running")
