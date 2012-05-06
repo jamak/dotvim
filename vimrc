@@ -4,6 +4,7 @@ so ~/.vim/unbundle/unbundle.vim
 "so ~/.vim/bundle/posterous/posterous.vim
 "call pathogen#runtime_append_all_bundles()
 let mapleader = ","
+set clipboard=unnamedplus
 set cul "Highlight the current line
 set laststatus=2 "Show the statusline, even with one file open
 set tw=80
@@ -40,7 +41,6 @@ if has("gui_macvim")
   set guifont=UbuntuBeta\ Mono:h11
   "set some tags shit
   set tags+=/System/Library/Frameworks/Python.framework/Versions/Current/tags
-  set clipboard=unnamed
   set tags+=/Library/Python/2.6/site-packages/tags
   map <F8> :!/usr/local/bin/ctags -R .<CR>
   "this maps toggle fullscreen to leader f
