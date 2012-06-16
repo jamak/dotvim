@@ -12,6 +12,7 @@ filetype off
 syntax on
 let g:Powerline_symbols = 'fancy'
 filetype plugin indent on
+
 " This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises
 " because seriously, fuck tabs
 set number
@@ -21,9 +22,11 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set softtabstop=2
+
 "split to the right, the way my brain thinks it should happen anyway
 set splitright
 set backspace=indent,eol,start
+
 " changes the colorscheme, removes all the window chrome
 if has("gui_running")
   set autochdir
@@ -37,6 +40,11 @@ if has("gui_running")
 else
   colorscheme jellybeans
 endif
+
+"Slimv stuff!
+let g:slimv_swank_cmd='!lein swank &'
+
+"Gui stuff to make my desktop play nice"
 if has("gui_macvim")
   set guifont=UbuntuBeta\ Mono:h11
   "set some tags shit
@@ -54,17 +62,19 @@ elseif has("gui_gtk")
   set tags+=/usr/local/lib/python2.7/site-packages/tags
   set tags+=/usr/local/lib/python2.7/dist-packages/tags
 endif
+
+
 set visualbell t_vb=    " turn off error beep/flash
 set novisualbell        " turn off visual bell
 "===============================================================
 "Shortcuts!
 "===============================================================
-" ,v brings up my .vimrc
-" ,V reloads it -- making all changes active (save required)
-map <leader>v :leftabove vsplit ~/.vim/vimrc<CR><C-W>_
-map <silent> <leader>V :source ~/.vim/vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+" ,1 brings up my .vimrc
+" ,2 reloads it -- making all changes active (save required)
+map <leader>1 :leftabove vsplit ~/.vim/vimrc<CR><C-W>_
+map <silent> <leader>2 :source ~/.vim/vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 "
-map <leader>r :registers<CR>
+""map <leader>r :registers<CR>
 "sensible movements are important, kids.
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
@@ -94,7 +104,7 @@ set autowrite
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
 "Aaaaaand this is for NERDTree
-map <leader>a :NERDTreeToggle<CR>
+map <leader>z :NERDTreeToggle<CR>
 "" Status line ------------------------------------------------------------- {{{
 
 "augroup ft_statuslinecolor
