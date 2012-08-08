@@ -4,7 +4,7 @@ so ~/.vim/unbundle/unbundle.vim
 "so ~/.vim/bundle/posterous/posterous.vim
 "call pathogen#runtime_append_all_bundles()
 let mapleader = ","
-set clipboard+=unnamedplus
+set clipboard+=unnamed
 set cul "Highlight the current line
 set laststatus=2 "Show the statusline, even with one file open
 set tw=80
