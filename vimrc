@@ -7,21 +7,23 @@ let mapleader = ","
 set clipboard+=unnamed
 set cul "Highlight the current line
 set laststatus=2 "Show the statusline, even with one file open
+set showtabline=0
 set tw=80
 filetype off
 syntax on
 let g:Powerline_symbols = 'fancy'
 filetype plugin indent on
+au BufNewFile,BufRead *.py call PareditInitBuffer()
 
 " This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises
 " because seriously, fuck tabs
 set number
 set autoindent
 set smartindent
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
-set softtabstop=2
+set softtabstop=4
 
 "split to the right, the way my brain thinks it should happen anyway
 set splitright
@@ -159,10 +161,10 @@ endfunction
 map <Leader><CR> :Tab_or_Complete<cr>
 
 set dictionary="/usr/dict/words"
-"Automatically make closing brackets parens, braces etc
-inoremap ( ()<Esc>:let leavechar=")"<CR>i
-inoremap { {}<Esc>:let leavechar="}"<CR>i
-inoremap [ []<Esc>:let leavechar="]"<CR>i
-inoremap " ""<Esc>:let leavechar="\""<CR>i
-"Leave an enclosed block
-imap <Leader>l <Esc>:exec "normal f" . leavechar<CR>a
+"""Automatically make closing brackets parens, braces etc
+""inoremap ( ()<Esc>:let leavechar=")"<CR>i
+""inoremap { {}<Esc>:let leavechar="}"<CR>i
+""inoremap [ []<Esc>:let leavechar="]"<CR>i
+""inoremap " ""<Esc>:let leavechar="\""<CR>i
+"""Leave an enclosed block
+""imap <Leader>l <Esc>:exec "normal f" . leavechar<CR>a

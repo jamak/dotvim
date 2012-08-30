@@ -46,3 +46,9 @@
 [submodule "bundle/cocoa-vim"]
 	path = bundle/cocoa-vim
 	url = https://github.com/msanders/cocoa.vim.git
+[submodule "bundle/vim-commentary"]
+	path = bundle/vim-commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule "ipython"]
+	path = ipython
+	url = git://github.com/ivanov/vim-ipython.git
