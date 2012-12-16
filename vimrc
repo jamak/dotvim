@@ -33,6 +33,7 @@ set backspace=indent,eol,start
 if has("gui_running")
   set autochdir
   colorscheme sorcerer
+  colorscheme Tomorrow-Night
   set guioptions-=L
   set guioptions-=l
   set guioptions-=R
@@ -41,6 +42,7 @@ if has("gui_running")
   set guioptions-=T
 else
   colorscheme jellybeans
+  colorscheme default
 endif
 
 "Slimv stuff!
