@@ -14,6 +14,7 @@ syntax on
 let g:Powerline_symbols = 'fancy'
 filetype plugin indent on
 au BufNewFile,BufRead *.py call PareditInitBuffer()
+"au BufNewFile,BufRead *.py call PareditInitBuffer()
 
 " This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises
 " because seriously, fuck tabs
