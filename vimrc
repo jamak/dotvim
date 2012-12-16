@@ -26,6 +26,11 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
+"remember which line we were at when we last edited a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 "split to the right, the way my brain thinks it should happen anyway
 set splitright
 set backspace=indent,eol,start
