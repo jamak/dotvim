@@ -5,7 +5,6 @@ so ~/.vim/unbundle/unbundle.vim
 "call pathogen#runtime_append_all_bundles()
 let mapleader = ","
 set clipboard+=unnamed
-set cul "Highlight the current line
 set laststatus=2 "Show the statusline, even with one file open
 set showtabline=0
 set tw=80
@@ -13,7 +12,6 @@ filetype off
 syntax on
 let g:Powerline_symbols = 'fancy'
 filetype plugin indent on
-au BufNewFile,BufRead *.py call PareditInitBuffer()
 "au BufNewFile,BufRead *.py call PareditInitBuffer()
 
 " This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises
@@ -34,11 +32,13 @@ endif
 "split to the right, the way my brain thinks it should happen anyway
 set splitright
 set backspace=indent,eol,start
+"also, remove those gross splitchars in terminal vim
+set fillchars+=vert:\ 
+"to allow mouse scrolling on local vim sessions.
+set mouse=a
 
 " changes the colorscheme, removes all the window chrome
 if has("gui_running")
-  set autochdir
-  colorscheme sorcerer
   colorscheme Tomorrow-Night
   set guioptions-=L
   set guioptions-=l
@@ -47,9 +47,12 @@ if has("gui_running")
   set guioptions-=r
   set guioptions-=T
 else
-  colorscheme jellybeans
   colorscheme default
 endif
+
+set cul "Highlight the current line
+"make sure the current line is bolded, not underlined.
+hi CursorLine term=bold cterm=bold guibg=dark
 
 "Slimv stuff!
 let g:slimv_swank_cmd='!lein swank &'
@@ -90,18 +93,18 @@ inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 " pinky-saving
 imap jj <C-[>
-" window movements
-map <C-h> <C-w>h
-map <C-l> <C-w>l
-map <C-j> <C-w>j
-map <C-k> <C-w>k
+" " window movements
+" map <C-h> <C-w>h
+" map <C-l> <C-w>l
+" map <C-j> <C-w>j
+" map <C-k> <C-w>k
 "make these work in insert mode too
 imap <C-w> <C-O><C-w>
 "aaand map the direction keys to the splits
-map <Left> <C-h>
-map <Right> <C-l>
-map <Down> <C-j>
-map <Up> <C-k>
+map <Left> <C-w>h
+map <Right> <C-w>l
+map <Down> <C-w>j
+map <Up> <C-w>k
 "use + and - to resize vertical splits
 map - <C-W><
 map + <C-W>>
@@ -169,10 +172,10 @@ endfunction
 map <Leader><CR> :Tab_or_Complete<cr>
 
 set dictionary="/usr/dict/words"
-"""Automatically make closing brackets parens, braces etc
-""inoremap ( ()<Esc>:let leavechar=")"<CR>i
-""inoremap { {}<Esc>:let leavechar="}"<CR>i
-""inoremap [ []<Esc>:let leavechar="]"<CR>i
-""inoremap " ""<Esc>:let leavechar="\""<CR>i
-"""Leave an enclosed block
-""imap <Leader>l <Esc>:exec "normal f" . leavechar<CR>a
+"Automatically make closing brackets parens, braces etc
+inoremap ( ()<Esc>:let leavechar=")"<CR>i
+inoremap { {}<Esc>:let leavechar="}"<CR>i
+inoremap [ []<Esc>:let leavechar="]"<CR>i
+inoremap " ""<Esc>:let leavechar="\""<CR>i
+"Leave an enclosed block
+imap <Leader>l <Esc>:exec "normal f" . leavechar<CR>a
