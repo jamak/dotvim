@@ -1,0 +1,1 @@
+ftbundle/go/gocode/ftplugin/go.vim
