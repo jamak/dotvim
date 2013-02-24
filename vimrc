@@ -15,7 +15,6 @@ filetype plugin indent on
 "au BufNewFile,BufRead *.py call PareditInitBuffer()
 
 " This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises
-" because seriously, fuck tabs
 set number
 set autoindent
 set smartindent
@@ -23,6 +22,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
+
+"so when I gist stuff, the gist link gets copied to the clipboard
+let g:gist_clip_command = 'pbcopy'
 
 "remember which line we were at when we last edited a file
 if has("autocmd")
@@ -48,7 +50,9 @@ if has("gui_running")
   set guioptions-=T
 else
   colorscheme default
+  hi Pmenu ctermbg=91
 endif
+
 
 set cul "Highlight the current line
 "make sure the current line is bolded, not underlined.
@@ -86,7 +90,8 @@ set novisualbell        " turn off visual bell
 " ,2 reloads it -- making all changes active (save required)
 map <leader>1 :leftabove vsplit ~/.vim/vimrc<CR><C-W>_
 map <silent> <leader>2 :source ~/.vim/vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-"
+" make buffer switch a bit more rational
+map <C-e> <C-^>
 ""map <leader>r :registers<CR>
 "sensible movements are important, kids.
 inoremap <Down> <C-o>gj
@@ -99,7 +104,7 @@ imap jj <C-[>
 " map <C-j> <C-w>j
 " map <C-k> <C-w>k
 "make these work in insert mode too
-imap <C-w> <C-O><C-w>
+" imap <C-w> <C-O><C-w>
 "aaand map the direction keys to the splits
 map <Left> <C-w>h
 map <Right> <C-w>l
@@ -151,25 +156,8 @@ set statusline+=)
 " Line and column position and counts.
 set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 
-" }}}
-
-" Use TAB to complete when typing words, else inserts TABs as usual.
-"Uses dictionary and source files to find matching words to complete.
-
-"See help completion for source,
-"Note: usual completion is on <C-n> but it's a pain in the ass to press all the time.
-"Never type the same word twice again!
-"Use the Linux dictionary when spelling is in doubt.
-
-function! Tab_Or_Complete()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return "\<C-N>"
-  else
-    return "\<Tab>"
-  endif
-endfunction
-
-map <Leader><CR> :Tab_or_Complete<cr>
+"muuuch faster omnicomplete
+imap <C-f> <C-x><C-o>
 
 set dictionary="/usr/dict/words"
 "Automatically make closing brackets parens, braces etc
