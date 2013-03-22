@@ -1,4 +1,5 @@
 set nocompatible
+set t_Co=256
 so ~/.vim/unbundle/unbundle.vim
 "call pathogen#infect()
 "so ~/.vim/bundle/posterous/posterous.vim
@@ -49,8 +50,17 @@ if has("gui_running")
   set guioptions-=r
   set guioptions-=T
 else
+  "Make sure vim knows we can send a crapload of chars for redraw
+  set ttyfast
   colorscheme default
+  "make the complete window bright/readable in light and dark bg
   hi Pmenu ctermbg=91
+  " let &background = ( &background == "dark"? "light" : "dark" )
+  if &bg ==? "dark"
+      colorscheme Tomorrow-Night
+  elseif &bg ==? "light"
+      colorscheme Tomorrow
+  endif
 endif
 
 
@@ -122,7 +132,7 @@ set autowrite
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
 "Aaaaaand this is for NERDTree
-map <leader>z :NERDTreeToggle<CR>
+map <leader>a :NERDTreeToggle<CR>
 "" Status line ------------------------------------------------------------- {{{
 
 "augroup ft_statuslinecolor
@@ -167,3 +177,12 @@ inoremap [ []<Esc>:let leavechar="]"<CR>i
 inoremap " ""<Esc>:let leavechar="\""<CR>i
 "Leave an enclosed block
 imap <Leader>l <Esc>:exec "normal f" . leavechar<CR>a
+
+function! ToggleBackground()
+    if g:colors_name == "Tomorrow"
+        colorscheme Tomorrow-Night
+    elseif g:colors_name == "Tomorrow-Night"
+        colorscheme Tomorrow
+    endif
+endfunction
+map <leader>z :call ToggleBackground() <bar> :syntax reset<cr>
