@@ -42,7 +42,7 @@ set mouse=a
 
 " changes the colorscheme, removes all the window chrome
 if has("gui_running")
-  colorscheme Tomorrow-Night
+  colorscheme solarized
   set guioptions-=L
   set guioptions-=l
   set guioptions-=R
@@ -52,7 +52,7 @@ if has("gui_running")
 else
   "Make sure vim knows we can send a crapload of chars for redraw
   set ttyfast
-  colorscheme default
+  " colorscheme default
   "make the complete window bright/readable in light and dark bg
   hi Pmenu ctermbg=91
   " let &background = ( &background == "dark"? "light" : "dark" )
@@ -73,7 +73,7 @@ let g:slimv_swank_cmd='!lein swank &'
 
 "Gui stuff to make my desktop play nice"
 if has("gui_macvim")
-  set guifont=UbuntuBeta\ Mono:h11
+  set guifont=UbuntuBeta\ Mono:h18
   "set some tags shit
   set tags+=/System/Library/Frameworks/Python.framework/Versions/Current/tags
   set tags+=/Library/Python/2.6/site-packages/tags
@@ -165,6 +165,11 @@ set statusline+=)
 
 " Line and column position and counts.
 set statusline+=\ (line\ %l\/%L,\ col\ %03c)
+" If you prefer the Omni-Completion tip window to close when a selection is
+" made, these lines close it on movement in insert mode or when leaving
+" insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 "muuuch faster omnicomplete
 imap <C-f> <C-x><C-o>
@@ -185,4 +190,5 @@ function! ToggleBackground()
         colorscheme Tomorrow
     endif
 endfunction
-map <leader>z :call ToggleBackground() <bar> :syntax reset<cr>
+" map <leader>z :call ToggleBackground() <bar> :syntax off <bar> :syntax on<bar> :syntax reset!<cr>
+map <leader>z :syntax clear <bar> :call ToggleBackground() <bar> :syntax enable <CR>
