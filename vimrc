@@ -52,15 +52,15 @@ if has("gui_running")
 else
   "Make sure vim knows we can send a crapload of chars for redraw
   set ttyfast
-  " colorscheme default
+  colorscheme default
   "make the complete window bright/readable in light and dark bg
   hi Pmenu ctermbg=91
-  " let &background = ( &background == "dark"? "light" : "dark" )
-  if &bg ==? "dark"
-      colorscheme Tomorrow-Night
-  elseif &bg ==? "light"
-      colorscheme Tomorrow
-  endif
+  " let &background = ( &background == 'dark'? 'light' : 'dark' )
+  " if &bg ==? 'dark'
+  "     colorscheme Tomorrow-Night
+  " elseif &bg ==? 'light'
+  "     colorscheme Tomorrow
+  " endif
 endif
 
 
@@ -73,7 +73,8 @@ let g:slimv_swank_cmd='!lein swank &'
 
 "Gui stuff to make my desktop play nice"
 if has("gui_macvim")
-  set guifont=UbuntuBeta\ Mono:h18
+  " set guifont=Droid\ Sans\ Mono:h14
+  set guifont=monofur:h18
   "set some tags shit
   set tags+=/System/Library/Frameworks/Python.framework/Versions/Current/tags
   set tags+=/Library/Python/2.6/site-packages/tags
