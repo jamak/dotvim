@@ -4,6 +4,43 @@ so ~/.vim/unbundle/unbundle.vim
 "call pathogen#infect()
 "so ~/.vim/bundle/posterous/posterous.vim
 "call pathogen#runtime_append_all_bundles()
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+
+Plugin "tpope/vim-fugitive"
+Plugin "mattn/gist-vim"
+Plugin "sjl/gundo.vim"
+Plugin "kchmck/vim-coffee-script"
+Plugin "tpope/vim-markdown"
+Plugin "scrooloose/nerdtree"
+Plugin "sunaku/vim-unbundle"
+Plugin "altercation/vim-colors-solarized"
+Plugin "agscala/vim-posterous"
+Plugin "b4winckler/vim-objc"
+Plugin "sophacles/vim-processing"
+Plugin "klen/python-mode"
+Plugin "rstacruz/sparkup"
+Plugin "msanders/cocoa.vim"
+Plugin "kien/ctrlp.vim"
+Plugin "mattn/webapi-vim"
+Plugin "tpope/vim-commentary"
+Plugin "ivanov/vim-ipython"
+Plugin "JuliaLang/julia-vim"
+Plugin "Valloric/YouCompleteMe"
+Plugin "nsf/gocode"
+Plugin "mileszs/ack.vim"
+Plugin "Twinside/vim-hoogle"
+Plugin "kien/ctrlp.vim"
+Plugin "jiangmiao/auto-pairs"
+Plugin "Lokaltog/powerline", {'rtp': 'powerline/bindings/vim'}
+Plugin "tpope/vim-surround"
+Plugin "fatih/vim-go"
+Plugin "derekwyatt/vim-scala"
+
+call vundle#end()
+
 let mapleader = ","
 set clipboard=unnamed
 set laststatus=2 "Show the statusline, even with one file open
