@@ -5,7 +5,7 @@ so ~/.vim/unbundle/unbundle.vim
 "so ~/.vim/bundle/posterous/posterous.vim
 "call pathogen#runtime_append_all_bundles()
 let mapleader = ","
-set clipboard+=unnamed
+set clipboard=unnamed
 set laststatus=2 "Show the statusline, even with one file open
 set showtabline=0
 set tw=80
@@ -36,13 +36,13 @@ endif
 set splitright
 set backspace=indent,eol,start
 "also, remove those gross splitchars in terminal vim
-set fillchars+=vert:\ 
+set fillchars+=vert:\x
 "to allow mouse scrolling on local vim sessions.
 set mouse=a
 
 " changes the colorscheme, removes all the window chrome
 if has("gui_running")
-  colorscheme solarized
+  colorscheme Ciapre
   set guioptions-=L
   set guioptions-=l
   set guioptions-=R
@@ -66,7 +66,7 @@ endif
 
 set cul "Highlight the current line
 "make sure the current line is bolded, not underlined.
-hi CursorLine term=bold cterm=bold guibg=dark
+hi CursorLine term=italic cterm=underline "guibg=light
 
 "Slimv stuff!
 let g:slimv_swank_cmd='!lein swank &'
@@ -169,8 +169,8 @@ set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
 " insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+" autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 "muuuch faster omnicomplete
 imap <C-f> <C-x><C-o>
