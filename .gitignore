@@ -38,3 +38,7 @@ Thumbs.db
 *.swp
 .netrwhist
 
+# everything vundle downloads and manages, except bundle #
+##########################################################
+bundle/**
+~bundle/Vundle.vim

@@ -1,6 +1,6 @@
 set nocompatible
 set t_Co=256
-so ~/.vim/unbundle/unbundle.vim
+" so ~/.vim/unbundle/unbundle.vim
 "call pathogen#infect()
 "so ~/.vim/bundle/posterous/posterous.vim
 "call pathogen#runtime_append_all_bundles()
@@ -9,48 +9,55 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 
-Plugin "tpope/vim-fugitive"
-Plugin "mattn/gist-vim"
-Plugin "sjl/gundo.vim"
-Plugin "kchmck/vim-coffee-script"
-Plugin "tpope/vim-markdown"
-Plugin "scrooloose/nerdtree"
-Plugin "sunaku/vim-unbundle"
-Plugin "altercation/vim-colors-solarized"
-Plugin "agscala/vim-posterous"
-Plugin "b4winckler/vim-objc"
-Plugin "sophacles/vim-processing"
-Plugin "klen/python-mode"
-Plugin "rstacruz/sparkup"
-Plugin "msanders/cocoa.vim"
-Plugin "kien/ctrlp.vim"
-Plugin "mattn/webapi-vim"
-Plugin "tpope/vim-commentary"
-Plugin "ivanov/vim-ipython"
-Plugin "JuliaLang/julia-vim"
-Plugin "Valloric/YouCompleteMe"
-Plugin "nsf/gocode"
-Plugin "mileszs/ack.vim"
-Plugin "Twinside/vim-hoogle"
-Plugin "kien/ctrlp.vim"
-Plugin "jiangmiao/auto-pairs"
-Plugin "Lokaltog/powerline", {'rtp': 'powerline/bindings/vim'}
-Plugin "tpope/vim-surround"
-Plugin "fatih/vim-go"
-Plugin "derekwyatt/vim-scala"
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mattn/gist-vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-markdown'
+Plugin 'scrooloose/nerdtree'
+Plugin 'sunaku/vim-unbundle'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'agscala/vim-posterous'
+Plugin 'b4winckler/vim-objc'
+Plugin 'sophacles/vim-processing'
+Plugin 'klen/python-mode'
+Plugin 'rstacruz/sparkup'
+Plugin 'msanders/cocoa.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'ivanov/vim-ipython'
+Plugin 'JuliaLang/julia-vim'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'nsf/gocode'
+Plugin 'mileszs/ack.vim'
+Plugin 'Twinside/vim-hoogle'
+Plugin 'jiangmiao/auto-pairs'
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+" Plugin 'Lokaltog/vim-powerline'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-surround'
+Plugin 'fatih/vim-go'
+Plugin 'derekwyatt/vim-scala'
 
 call vundle#end()
+filetype plugin indent on
 
 let mapleader = ","
 set clipboard=unnamed
 set laststatus=2 "Show the statusline, even with one file open
 set showtabline=0
 set tw=80
-filetype off
 syntax on
-let g:Powerline_symbols = 'fancy'
-filetype plugin indent on
-"au BufNewFile,BufRead *.py call PareditInitBuffer()
+"airline stuff
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
 
 " This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises
 set number
@@ -73,7 +80,7 @@ endif
 set splitright
 set backspace=indent,eol,start
 "also, remove those gross splitchars in terminal vim
-set fillchars+=vert:\x
+set fillchars+=vert:\ 
 "to allow mouse scrolling on local vim sessions.
 set mouse=a
 
@@ -105,8 +112,8 @@ set cul "Highlight the current line
 "make sure the current line is bolded, not underlined.
 hi CursorLine term=italic cterm=underline "guibg=light
 
-"Slimv stuff!
-let g:slimv_swank_cmd='!lein swank &'
+" "Slimv stuff!
+" let g:slimv_swank_cmd='!lein swank &'
 
 "Gui stuff to make my desktop play nice"
 if has("gui_macvim")
@@ -180,53 +187,15 @@ map <leader>a :NERDTreeToggle<CR>
 "    au InsertLeave * hi StatusLine ctermfg=130 guifg=#CD5907
 "augroup END
 
-set statusline=%f    " Path.
-set statusline+=%r   " Readonly flag.
-set statusline+=%w   " Preview window flag.
-
-set statusline+=\    " Space.
-
-set statusline+=%#redbar#                " Highlight the following as a warning.
-"set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
-set statusline+=%*                           " Reset highlighting.
-
-set statusline+=%=   " Right align.
-
-" File format, encoding and type.  Ex: "(unix/utf-8/python)"
-set statusline+=(
-set statusline+=%{&ff}                        " Format (unix/DOS).
-set statusline+=/
-set statusline+=%{strlen(&fenc)?&fenc:&enc}   " Encoding (utf-8).
-set statusline+=/
-set statusline+=%{&ft}                        " Type (python).
-set statusline+=)
-
-" Line and column position and counts.
-set statusline+=\ (line\ %l\/%L,\ col\ %03c)
-" If you prefer the Omni-Completion tip window to close when a selection is
-" made, these lines close it on movement in insert mode or when leaving
-" insert mode
-" autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-" autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
 "muuuch faster omnicomplete
 imap <C-f> <C-x><C-o>
 
 set dictionary="/usr/dict/words"
-"Automatically make closing brackets parens, braces etc
-inoremap ( ()<Esc>:let leavechar=")"<CR>i
-inoremap { {}<Esc>:let leavechar="}"<CR>i
-inoremap [ []<Esc>:let leavechar="]"<CR>i
-inoremap " ""<Esc>:let leavechar="\""<CR>i
-"Leave an enclosed block
-imap <Leader>l <Esc>:exec "normal f" . leavechar<CR>a
+" "Automatically make closing brackets parens, braces etc
+" inoremap ( ()<Esc>:let leavechar=")"<CR>i
+" inoremap { {}<Esc>:let leavechar="}"<CR>i
+" inoremap [ []<Esc>:let leavechar="]"<CR>i
+" inoremap " ""<Esc>:let leavechar="\""<CR>i
+" "Leave an enclosed block
+" imap <Leader>l <Esc>:exec 'normal f' . leavechar<CR>a
 
-function! ToggleBackground()
-    if g:colors_name == "Tomorrow"
-        colorscheme Tomorrow-Night
-    elseif g:colors_name == "Tomorrow-Night"
-        colorscheme Tomorrow
-    endif
-endfunction
-" map <leader>z :call ToggleBackground() <bar> :syntax off <bar> :syntax on<bar> :syntax reset!<cr>
-map <leader>z :syntax clear <bar> :call ToggleBackground() <bar> :syntax enable <CR>
