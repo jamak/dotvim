@@ -34,8 +34,6 @@ Plugin 'nsf/gocode'
 Plugin 'mileszs/ack.vim'
 Plugin 'Twinside/vim-hoogle'
 Plugin 'jiangmiao/auto-pairs'
-" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
-" Plugin 'Lokaltog/vim-powerline'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'fatih/vim-go'
