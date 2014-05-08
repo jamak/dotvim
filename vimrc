@@ -38,6 +38,7 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'fatih/vim-go'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'kien/rainbow_parentheses.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -59,6 +60,12 @@ let g:airline_right_alt_sep = '⮃'
 let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
+
+"Rainbow Parens EVERYWHERE
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " This stuff makes vim use spaces instead of tabs and backspace over tabs when the need arises
 set number
