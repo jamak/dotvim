@@ -43,16 +43,23 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'scrooloose/syntastic'
+Plugin 'hylang/vim-hy'
+Plugin 'rust-lang/rust', {'rtp': 'src/etc/vim/'}
+Plugin 'dag/vim2hs'
+Plugin 'victoredwardocallaghan/cryptol.vim'
 
 call vundle#end()
 filetype plugin indent on
 
 let mapleader = ","
-set clipboard=unnamed
+set clipboard+=unnamed
 set laststatus=2 "Show the statusline, even with one file open
 set showtabline=0
 set tw=80
 syntax on
+"disable python validate-on-save from eclim
+let g:EclimPythonValidate = 0
+let g:EclimValidateSortResults = 'severity'
 "airline stuff
 if !exists('g:airline_symbols')
 let g:airline_symbols = {}
