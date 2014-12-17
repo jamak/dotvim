@@ -136,7 +136,8 @@ hi CursorLine term=italic cterm=underline "guibg=light
 "Gui stuff to make my desktop play nice"
 if has("gui_macvim")
   " set guifont=Droid\ Sans\ Mono:h14
-  set guifont=monofur:h18
+  " set guifont=monofur:h18
+  set guifont=M+\ 1mn\ thin:h22
   "set some tags shit
   set tags+=/System/Library/Frameworks/Python.framework/Versions/Current/tags
   set tags+=/Library/Python/2.6/site-packages/tags
