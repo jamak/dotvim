@@ -98,11 +98,11 @@ endif
 set splitright
 set backspace=indent,eol,start
 "also, remove those gross splitchars in terminal vim
-set fillchars+=vert:\ 
+set fillchars=vert:\│,fold:-
 "to allow mouse scrolling on local vim sessions.
 set mouse=a
 
-" changes the colorscheme, removes all the window chrome
+" changes the colorscheme, removes all the window chrome for gui mode
 if has("gui_running")
   colorscheme Ciapre
   set guioptions-=L
@@ -115,7 +115,7 @@ else
   "Make sure vim knows we can send a crapload of chars for redraw
   set ttyfast
   colorscheme default
-  "make the complete window bright/readable in light and dark bg
+  "make the completion window bright/readable in light and dark bg
   hi Pmenu ctermbg=91
   " let &background = ( &background == 'dark'? 'light' : 'dark' )
   " if &bg ==? 'dark'
