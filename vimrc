@@ -110,7 +110,9 @@ set backspace=indent,eol,start
 set fillchars=vert:\│,fold:-
 "to allow mouse scrolling on local vim sessions.
 set mouse=a
-
+" highlight search and Clear search
+set hlsearch
+nnoremap <silent><Leader>/ :nohlsearch<CR>
 " changes the colorscheme, removes all the window chrome for gui mode
 if has("gui_running")
   colorscheme Ciapre
