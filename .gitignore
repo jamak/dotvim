@@ -40,5 +40,6 @@ Thumbs.db
 
 # everything vundle downloads and manages, except bundle #
 ##########################################################
+undo/**
 bundle/**
 !bundle/Vundle.vim/**
