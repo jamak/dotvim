@@ -47,6 +47,8 @@ Plugin 'hylang/vim-hy'
 Plugin 'rust-lang/rust', {'rtp': 'src/etc/vim/'}
 Plugin 'dag/vim2hs'
 Plugin 'victoredwardocallaghan/cryptol.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'eagletmt/neco-ghc'
 
 call vundle#end()
 filetype plugin indent on
