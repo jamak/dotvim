@@ -106,9 +106,10 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
-"so when I gist stuff, the gist link gets copied to the clipboard
+"so when I gist stuff, the gist link gets copied to the clipboard, aaand it's
+"private by default
 let g:gist_clip_command = 'pbcopy'
-
+let g:gist_post_private = 1
 "remember which line we were at when we last edited a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
