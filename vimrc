@@ -80,6 +80,11 @@ let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
 
+
+let g:syntastic_python_flake8_quiet_messages = {
+    \ "type":  "style",
+    \ "regex": '\m\[C03\d\d\]' }
+
 "OCaml Merlin stuff
 let s:ocamlmerlin=substitute(system('opam config var share'),'\n$','','''') .  "/ocamlmerlin"
 execute "set rtp+=".s:ocamlmerlin."/vim"
