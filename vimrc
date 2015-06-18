@@ -44,14 +44,20 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'scrooloose/syntastic'
 Plugin 'hylang/vim-hy'
-Plugin 'rust-lang/rust', {'rtp': 'src/etc/vim/'}
+Plugin 'rust-lang/rust.vim'
 Plugin 'dag/vim2hs'
 Plugin 'victoredwardocallaghan/cryptol.vim'
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
 Plugin 'eagletmt/neco-ghc'
+Plugin 'ngn/vim-apl'
+Plugin 'ervandew/eclim', {'rtp': 'org.eclim.core/vim'}
+
 
 call vundle#end()
 filetype plugin indent on
+
+"let YouCompleteMe use neco-ghc
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
 let mapleader = ","
 set clipboard+=unnamed
