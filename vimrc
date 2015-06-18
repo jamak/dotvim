@@ -30,7 +30,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'ivanov/vim-ipython'
 Plugin 'JuliaLang/julia-vim'
 " Plugin 'Valloric/YouCompleteMe'
-Plugin 'nsf/gocode'
+Plugin 'nsf/gocode', {'rtp':'vim/'}
 Plugin 'mileszs/ack.vim'
 Plugin 'Twinside/vim-hoogle'
 Plugin 'jiangmiao/auto-pairs'
