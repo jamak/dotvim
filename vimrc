@@ -23,7 +23,6 @@ Plugin 'b4winckler/vim-objc'
 Plugin 'sophacles/vim-processing'
 " Plugin 'klen/python-mode'
 Plugin 'rstacruz/sparkup'
-Plugin 'msanders/cocoa.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'tpope/vim-commentary'
@@ -50,8 +49,14 @@ Plugin 'victoredwardocallaghan/cryptol.vim'
 " Plugin 'davidhalter/jedi-vim'
 Plugin 'eagletmt/neco-ghc'
 Plugin 'ngn/vim-apl'
-Plugin 'ervandew/eclim', {'rtp': 'org.eclim.core/vim'}
-
+Plugin 'othree/yajs.vim'
+Plugin 'mxw/vim-jsx'
+"iOS dev stuff
+Plugin 'Rip-Rip/clang_complete'
+Plugin 'eraserhd/vim-ios'
+Plugin 'msanders/cocoa.vim'
+Plugin 'keith/swift.vim'
+Plugin 'vim-scripts/nginx.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -65,9 +70,9 @@ set laststatus=2 "Show the statusline, even with one file open
 set showtabline=0
 set tw=80
 syntax on
-"disable python validate-on-save from eclim
-let g:EclimPythonValidate = 0
-let g:EclimValidateSortResults = 'severity'
+" "disable python validate-on-save from eclim
+" let g:EclimPythonValidate = 0
+" let g:EclimValidateSortResults = 'severity'
 "airline stuff
 if !exists('g:airline_symbols')
 let g:airline_symbols = {}
@@ -79,7 +84,7 @@ let g:airline_right_alt_sep = '⮃'
 let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
-
+AirlineToggleWhitespace
 
 let g:syntastic_python_flake8_quiet_messages = {
     \ "type":  "style",
