@@ -84,7 +84,6 @@ let g:airline_right_alt_sep = '⮃'
 let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
-AirlineToggleWhitespace
 
 let g:syntastic_python_flake8_quiet_messages = {
     \ "type":  "style",
